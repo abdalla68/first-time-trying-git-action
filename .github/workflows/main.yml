@@ -1,1 +1,21 @@
+on:
+   push:
+    branches:
+      - master
 
+
+
+
+
+jobs: 
+    build:
+      runs-on: ubuntu-latest
+
+      steps:
+        - uses: actions/checkout@v3
+      
+        - name: "login to doccker hub"
+          run: docker login --username ${{ secrets.USERNAME }} --password ${{ secrets.PASSWORD }}
+
+
+              
